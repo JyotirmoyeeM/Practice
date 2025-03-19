@@ -23,6 +23,7 @@
 	3333
 	2222
 	1111
+
   
 “””
 N = 4
@@ -50,10 +51,11 @@ def increasing_integer_square_pattern(N):
         print()
 
 def decreasing_integer_square_pattern(N):
-    for i in range(1,N + 1, 1):
-        for j in range(N, 0, -1):
-            print(j, end="")
+    for i in range(N, 0, -1):   # i = 4 to 1
+        for j in range(1, N + 1):
+            print(i, end="")
         print()
+
         
 star_square_pattern(N)
 print()
