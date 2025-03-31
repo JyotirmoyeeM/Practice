@@ -1,0 +1,53 @@
+"""
+  Problem statement
+Your task is to write a function named print_composite that prints if there are any composite numbers up to a given number, n.
+
+
+
+Composite numbers are positive integers greater than 1 that have more than two positive divisors. In other words, a composite number has factors other than 1 and itself.
+
+Detailed explanation ( Input/output format, Notes, Images )
+Sample Input 1:
+10
+Sample Output 1:
+4
+6
+8
+9
+10
+Explanation :
+A composite number is a positive integer greater than 1 that has more than two positive divisors. In other words, it is not a prime number. Here are the composite numbers between 2 and 10:
+4, 6, 8, 9, and 10
+    #Your code goes here
+
+
+def print_composite(n):
+    for i  in range(2, n+1):
+        if is_prime(i) != True:
+            print(i)
+
+    
+
+
+"""
+  def is_prime(n):
+    if n < 2:
+        return False
+    
+    else:
+        for i in range(2, int(n**0.5)+1):
+            if n % i == 0:
+                return False
+        return True
+
+    #Your code goes here
+
+
+def print_composite(n):
+    for i  in range(2, n+1):
+        if is_prime(i) != True:
+            print(i)
+
+    
+
+    #Your code goes here 
