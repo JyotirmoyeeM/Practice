@@ -35,24 +35,24 @@ Solving using 2 pointer method
 """
 
 def pair_sum(arr, x):
-  count = 0
-  pair = []
-  left = 0
-  right = len(arr) - 1
-  arr.sort()
-  while left < right:
-    total = arr[left] + arr[right]
-    if total == x:
-      #pair found
-      count += 1
-      pair.append([arr[left] + arr[right]])
-      left += 1
-      right -= 1
-    elif total > x:
-      right -= 1
-    else:
-      left += 1
-  return (count, pair)
+    arr.sort()
+    count = 0
+    pair = []
+    left = 0
+    right = len(arr) - 1
+    while left < right:
+        total = arr[left] + arr[right]
+        if total == x:
+            
+            pair.append((arr[left], arr[right]))
+            count += 1
+            left += 1
+            right -= 1
+        elif total > x:
+            right -= 1
+        else:
+            left += 1
+    return count, pair
 
 
 pair_sum([1,3,6,2,5,4,3,2,4], 7)
