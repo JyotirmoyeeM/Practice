@@ -48,7 +48,7 @@ def Jarvis(task):
     print()
     print("Curent Status: [Successful]")
     print()
-    print(f"Message : {task} excuted successfully")
+    print(f"Message : '{task}' excuted successfully")
 
 result = Jarvis()
 if result:
