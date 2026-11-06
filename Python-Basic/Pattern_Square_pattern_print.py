@@ -1,45 +1,24 @@
-"""Today we shall be printing pattern SQUARE
-*****
-*****
-*****
-*****
-*****
+"""Print square patterns made from stars and row or column numbers."""
 
------------------------
-12345
-12345
-12345
-12345
-12345
------------------------
-11111
-22222
-33333
-44444
-55555
-"""
+N = 5
 
-N=5
-_
-def Pattern_Star_square():
-  for i in range(1, N+1):
-    for j in range(1. N+1):
-      print("*",end="")
-    print()
 
-def Pattern_row_number():
-    for i in range(1, N+1):
-    for j in range(1. N+1):
-      print(j,end="")
-    print()
+def pattern_star_square():
+    for _ in range(N):
+        print("*" * N)
 
-def Patter_coloumn_number():
-    for i in range(1, N+1):
-    for j in range(1. N+1):
-      print(i,end="")
-    print()
 
-Pattern_Star_square()
-Pattern_row_number()
-Patter_column_number()
+def pattern_row_number():
+    for _ in range(N):
+        print("".join(str(column) for column in range(1, N + 1)))
 
+
+def pattern_column_number():
+    for row in range(1, N + 1):
+        print(str(row) * N)
+
+
+if __name__ == "__main__":
+    pattern_star_square()
+    pattern_row_number()
+    pattern_column_number()

@@ -1,138 +1,16 @@
-#WAP a program to convert Binary to integers
-N= int(input())
-ans =0
-last_digit= 0
-pow_of_two = 1
-while N>0:
-  last_digit = N % 10
-  ans+= last_digit*pow_of_two
-  pow_of_two*=2
-  n//=2
-print(and)
-"""
-Here the logic used is that if a binary is given then for every digit in the binary we will assign it placeholder with the power of 2, where the zeros place one will have the power of two as 1, tenths place will have 2, hundreds will have 4 and so on and we will first multiply the placeholder digits with the 
-power of 2 assigned to the same placeholder and lastly, we will add all of their output to find the result as over binary conversion to integer.
-"""
-"""
-Refined Explanation of the Logic
-When converting a binary number to its integer equivalent, each digit in the binary number represents a power of 2, based on its position (or placeholder). Here's how it works:
+"""Convert a binary string to its decimal value without using int(..., 2)."""
 
-Placeholder and Power of 2:
 
-Each digit in the binary number corresponds to a placeholder, starting from the rightmost digit (which is the least significant bit).
+def binary_to_decimal(binary):
+    """Return the decimal value of a string containing only 0s and 1s."""
+    if not binary or any(digit not in "01" for digit in binary):
+        raise ValueError("binary must contain at least one 0 or 1")
 
-The rightmost digit (ones place) has a placeholder value of 
-2
-0
-=
-1
-2 
-0
- =1.
+    decimal = 0
+    for digit in binary:
+        decimal = decimal * 2 + int(digit)
+    return decimal
 
-The next digit to the left (tens place) has a placeholder value of 
-2
-1
-=
-2
-2 
-1
- =2.
 
-The next digit (hundreds place) has a placeholder value of 
-2
-2
-=
-4
-2 
-2
- =4.
-
-This pattern continues, with each subsequent placeholder being a power of 2 that increases by 1 as you move left.
-
-Multiply and Sum:
-
-For each digit in the binary number, multiply the digit (either 0 or 1) by its corresponding placeholder value (power of 2).
-
-Add up all the results of these multiplications to get the final integer value.
-
-Example
-Let’s take the binary number 1011:
-
-Break it down digit by digit, starting from the right:
-
-Rightmost digit (1): 
-1
-×
-2
-0
-=
-1
-×
-1
-=
-1
-1×2 
-0
- =1×1=1
-
-Next digit (1): 
-1
-×
-2
-1
-=
-1
-×
-2
-=
-2
-1×2 
-1
- =1×2=2
-
-Next digit (0): 
-0
-×
-2
-2
-=
-0
-×
-4
-=
-0
-0×2 
-2
- =0×4=0
-
-Leftmost digit (1): 
-1
-×
-2
-3
-=
-1
-×
-8
-=
-8
-1×2 
-3
- =1×8=8
-
-Add up the results:
-
-1
-+
-2
-+
-0
-+
-8
-=
-11
-1+2+0+8=11
-
-So, the binary number 1011 is equivalent to the integer 11.
-"""
+if __name__ == "__main__":
+    print(binary_to_decimal(input("Enter a binary number: ").strip()))

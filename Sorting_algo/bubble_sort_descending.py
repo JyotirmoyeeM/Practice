@@ -1,23 +1,25 @@
+"""Descending bubble sort.
+
+Problem: Sort a list in descending order.
+Approach: Swap adjacent values when the left value is smaller.
+Complexity: O(n^2) time and O(1) extra space.
+Assumptions: The list contains mutually comparable values.
+"""
 
 
 def bubble_sort(lst):
-    
+    """Sort ``lst`` in place and return it.
+
+    Time: O(n^2). Extra space: O(1).
+    """
     size = len(lst)
-
-    #outer loop to go through all the elemts in lst
     for i in range(size):
-
-        #inner loop to imply the bubble sort to all the elemsts
-        for j in range(size-1):
-            #the bubble sort condition in descending order
-            if lst[j] < lst[j+1]:
-                lst[j], lst[j+1] = lst[j+1], lst[j]
-    
+        for j in range(size - 1 - i):
+            if lst[j] < lst[j + 1]:
+                lst[j], lst[j + 1] = lst[j + 1], lst[j]
     return lst
 
 
-# take integer inputs and convert it to a list    
-data_list = list(map(int, input().split()))
-
-sorted_list = bubble_sort(data_list)
-print(sorted_list)
+if __name__ == "__main__":
+    data = list(map(int, input("Enter numbers separated by spaces: ").split()))
+    print(bubble_sort(data))

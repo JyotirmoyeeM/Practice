@@ -1,50 +1,30 @@
-"""
-write a program for the problem: You have a list of numbers, and you want to find pairs of numbers that add up to a specific target value.
-For example, if your numbers are [1, 8, 3, 6, 5, 7] and your target is 10, the pairs would be (3,7) and (5,5).
+"""Find disjoint value pairs whose sum equals a target.
 
+Problem: Find pairs of values that add up to a target.
+Approach: Sort a copy, then move two pointers inward based on their sum.
+Complexity: O(n log n) time and O(n) extra space.
+Assumptions: Each input occurrence can be used once; duplicate values count
+as separate occurrences.
 """
 
-#Solution
-
-#psudo_code
-"""
-Solving using 2 pointer method
-  Initialize the function with an array and a target:
-      initialise count(number of pairs with summation equals to target)
-      Sort the array
-      left = 0 index
-      right = length(arr) - 1 index
-      pair = [] Initialize an empty list to store all combinations
-
-      First loop where left < right:
-        total = arr[left] + arr[right]
-        2nd loop if total == target:
-          found the pair
-          add the pair to pair list
-          increase count
-          increase left index
-          decrease right index
-        elif total > target:
-          didnt find pair
-          decrease right index
-        else:
-          increase left index
-      return (count, pair)
-          
-      
-"""
 
 def pair_sum(arr, x):
-    arr.sort()
+    """Return ``(count, pairs)`` without modifying ``arr``.
+
+    The result contains value pairs, not index pairs. Each input occurrence is
+    used at most once. Sorting dominates the O(n log n) time; the sorted copy
+    uses O(n) extra space.
+    """
+    values = sorted(arr)
     count = 0
-    pair = []
+    pairs = []
     left = 0
-    right = len(arr) - 1
+    right = len(values) - 1
+
     while left < right:
-        total = arr[left] + arr[right]
+        total = values[left] + values[right]
         if total == x:
-            
-            pair.append((arr[left], arr[right]))
+            pairs.append((values[left], values[right]))
             count += 1
             left += 1
             right -= 1
@@ -52,10 +32,8 @@ def pair_sum(arr, x):
             right -= 1
         else:
             left += 1
-    return count, pair
+    return count, pairs
 
 
-pair_sum([1,3,6,2,5,4,3,2,4], 7)
-print(pair_sum([1,3,6,2,5,4,3,2,4], 7))
-      
-      
+if __name__ == "__main__":
+    print(pair_sum([1, 3, 6, 2, 5, 4, 3, 2, 4], 7))

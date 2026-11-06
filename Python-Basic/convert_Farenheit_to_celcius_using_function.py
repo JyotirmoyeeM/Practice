@@ -50,5 +50,4 @@ s = int(input())
 e = int(input())
 step = int(input())
 
-print(convert_farenheit_to_celcius(s, e, step)
-  
+convert_farenheit_to_celcius(s, e, step)

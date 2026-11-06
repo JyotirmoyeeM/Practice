@@ -1,4 +1,4 @@
-“”” to print pattern 
+"""Print a collection of square patterns.
 (1)     * * * *
 	* * * *
 	* * * *
@@ -24,8 +24,7 @@
 	2222
 	1111
 
-  
-“””
+"""
 N = 4
 
 def star_square_pattern(N):

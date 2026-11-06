@@ -11,4 +11,8 @@ def checkArmstrong(n):
 
 def main():
     user_input = int(input())
-    print(checkArmstrong(user_input)
+    print(checkArmstrong(user_input))
+
+
+if __name__ == "__main__":
+    main()

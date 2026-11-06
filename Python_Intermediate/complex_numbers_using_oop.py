@@ -1,26 +1,21 @@
-#create a program TO ADD COMPLEX NUMBERS
+"""A small example of adding complex numbers with a class."""
+
+
 class Complex:
-    def __init__(self, imag, real):
-        self.imag = imag
+    """Represent a complex number using real and imaginary parts."""
+
+    def __init__(self, real, imag):
         self.real = real
-        
-        def add(self, number):
-            result_imag = self.imag + number.imag
-            result_real = self.real + number.real
-            
-            result = Complex(result_imag, result_real)
-            return result
-        
-        
-    
-    
-    
+        self.imag = imag
 
-n1 = Complex(5,6)
-n2 = Complex(-4,2)
+    def add(self, number):
+        """Return the sum without changing either input."""
+        return Complex(self.real + number.real, self.imag + number.imag)
 
-n3 = n1.add(n2)
 
-# printing n3 attributes
-print('real part =', n3.real)
-print('imaginary part =', n3.imaginary)
+if __name__ == "__main__":
+    first = Complex(6, 5)
+    second = Complex(2, -4)
+    result = first.add(second)
+    print(f"real part = {result.real}")
+    print(f"imaginary part = {result.imag}")
