@@ -2,9 +2,7 @@
 
 A growing collection of Python exercises from my learning journey — from language fundamentals to sorting and two-pointer problem solving. I use this repository to practise, keep track of what I have learned, and build a reference I can return to later.
 
-**Start here:** [Open the showcase page](index.html) locally, or browse the folders below.
-
-The showcase is a static page with no build step. To publish it, enable GitHub Pages in **Settings → Pages**, choose **Deploy from a branch**, then select `dsa-basic` and `/(root)` (or the branch where you merge this work).
+**Start here:** [View the live showcase](https://jyotirmoyeem.github.io/Practice/) or browse the folders below. To preview locally, open [index.html](index.html) in a browser.
 
 [![Python tests](https://github.com/JyotirmoyeeM/Practice/actions/workflows/tests.yml/badge.svg?branch=dsa-basic)](https://github.com/JyotirmoyeeM/Practice/actions/workflows/tests.yml)
 
